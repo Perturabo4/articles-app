@@ -1,9 +1,13 @@
+import Header from 'components/Header'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { articlesFetched, fetshArticles } from 'redux/ducks/articles'
+import { fetshArticles } from 'redux/ducks/articles'
+
+import './App.css'
 
 function App() {
   const load = useSelector((state) => state.load)
+
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -14,7 +18,11 @@ function App() {
     return <div>Loading ...</div>
   }
 
-  return <div className="App"></div>
+  return (
+    <div className="App">
+      <Header />
+    </div>
+  )
 }
 
 export default App

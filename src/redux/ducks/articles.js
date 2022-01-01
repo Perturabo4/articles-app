@@ -38,6 +38,11 @@ export const articlesFetched = (articles) => {
   return { type: ARTICLES_FETCHED, payload: articles }
 }
 
+// selectors
+
+export const selectArticles = (state) => state.articles
+export const selectArticlesLoad = (state) => state.load
+
 // api request functions
 
 async function fetchArticles() {
