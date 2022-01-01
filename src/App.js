@@ -1,3 +1,4 @@
+import Content from 'components/Content'
 import Header from 'components/Header'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Content />
     </div>
   )
 }
