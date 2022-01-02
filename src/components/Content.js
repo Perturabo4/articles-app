@@ -6,6 +6,7 @@ import ArticlePreview from './Article-preview'
 
 const Content = () => {
   const articles = useSelector(selectArticles)
+
   return (
     <Grid container spacing={2}>
       {articles.map(({ id, title, imageUrl, summary }) => {
