@@ -3,7 +3,8 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
-import { Button, CardActionArea, CardActions, Grid } from '@mui/material'
+import { CardActionArea, CardActions, Grid } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 export default function ArticlePreview({ id, title, imageUrl, summary }) {
   return (
@@ -26,9 +27,7 @@ export default function ArticlePreview({ id, title, imageUrl, summary }) {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
+          <Link to={`/api/${id}`}>View</Link>
         </CardActions>
       </Card>
     </Grid>

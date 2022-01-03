@@ -18,7 +18,7 @@ const initialState = {
 export default function articlesReducer(state = initialState, action) {
   switch (action.type) {
     case ARTICLES_FETCH:
-      return { ...state, load: false }
+      return { ...state, load: true }
     case ARTICLES_FETCHED:
       return { ...state, load: false, articles: action.payload }
     case ARTICLES_FETCH_ERROR:
@@ -40,14 +40,13 @@ export const articlesFetched = (articles) => {
 
 // selectors
 
-export const selectArticles = (state) => state.articles
-export const selectArticlesLoad = (state) => state.load
+export const selectArticles = (state) => state.articles.articles
+export const selectArticlesLoad = (state) => state.articles.load
 
 // api request functions
-
 async function fetchArticles() {
   const res = await fetch(
-    'https://api.spaceflightnewsapi.net/v3/articles?_limit=6'
+    `https://api.spaceflightnewsapi.net/v3/articles?_limit=10`
   )
   const data = await res.json()
   return data
