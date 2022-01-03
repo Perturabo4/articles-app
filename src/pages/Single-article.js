@@ -26,8 +26,8 @@ const SingleArticle = () => {
 
   return (
     <>
-      <h2>{article.title}</h2>
-      <p>{article.summary}</p>
+      <h2>{article && article.title}</h2>
+      <p>{article && article.summary}</p>
       <Link to={'/'}>Back to articles</Link>
     </>
   )
